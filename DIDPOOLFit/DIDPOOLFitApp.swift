@@ -11,7 +11,9 @@ import SwiftUI
 struct DIDPOOLFitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack{
+                WelcomeView()
+            }
         }
     }
 }
