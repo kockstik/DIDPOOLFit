@@ -17,7 +17,7 @@ struct RoundedButton: View {
             action?()
         } label: {
             ZStack{
-                LinearGradient(colors: [.logoLinearLeft, .logoLinearRight], startPoint: UnitPoint(x: -0.5, y: -0.5), endPoint: UnitPoint(x: 2, y: 2))
+                LogoGradient()
                 
                 HStack(alignment: .center, spacing: 10){
                     image
@@ -33,8 +33,4 @@ struct RoundedButton: View {
         .cornerRadius(99)
         .frame(height: 60)
     }
-}
-
-#Preview {
-    RoundedButton()
 }
