@@ -28,7 +28,7 @@ struct OnboardingView: View{
         .background{
             AnimatedOnboardShape(progress: CGFloat(page), offsetY: -435)
                 .fill(.appWhite)
-                .animation(.easeInOut, value: page)
+                .animation(.easeInOut(duration: 0.6), value: page)
                 .background(BackgroundGradient.gradient)
                 .ignoresSafeArea()
         }
