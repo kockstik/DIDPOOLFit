@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingView: View{
     
     @State private var page = 0
+    @State private var showRegisterView = false
     
     var body: some View {
         ZStack{
@@ -34,12 +35,19 @@ struct OnboardingView: View{
         }
         .overlay(alignment: .bottomTrailing) {
             ProgressButton(progress: CGFloat(page) / 4){
-                withAnimation {
-                    page = min(page + 1, 3)
+                if page < 3 {
+                    withAnimation {
+                        page = min(page + 1, 3)
+                    }
+                } else {
+                    showRegisterView = true
                 }
             }
                 .padding(.bottom, 40)
                 .padding(.trailing, 30)
+        }
+        .navigationDestination(isPresented: $showRegisterView) {
+            Register1View()
         }
     }
 }
