@@ -13,22 +13,28 @@ struct PrivacyPolicyButton: View {
     var action: (() -> Void)?
     
     var body: some View {
-        HStack(alignment: .top, spacing: 10){
+        HStack(alignment: .top, spacing: 0){
             
             Button {
                 isSigned = !isSigned
             } label: {
                 RoundedRectangle(cornerRadius: 3)
+                    .fill(.clear)
+                    .stroke(.gray2, style: .init(lineWidth: 1))
                     .frame(width: 16, height: 16)
-                    .border(.gray2, width: 0.8)
                     .overlay {
                         if isSigned {
                             RoundedRectangle(cornerRadius: 1)
-                                .frame(width: 12, height: 12)
-                                .background(BackgroundGradient.gradient)
+                                .fill(.gray2)
+                                .padding(2)
                         }
                     }
+                    .padding(.trailing, 10)
+                    .padding(.bottom, 10)
+                
             }
+            
+            
             
             Button {
                 action?()
