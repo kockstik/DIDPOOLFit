@@ -31,7 +31,7 @@ struct Input: View {
         .background{
             RoundedRectangle(cornerRadius: 14)
                 .fill(Color(.border))
-                .border(.border, width: 1)
+                .stroke(.border, style: .init(lineWidth: 1))
         }
     }
 }
