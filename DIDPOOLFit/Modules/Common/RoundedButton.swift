@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct RoundedButton: View {
-    var image: Image?
+    var leadingImage: Image?
     var title: String?
+    var trailingImage: Image?
     var action: (() -> Void)?
     
     var body: some View {
@@ -20,17 +21,25 @@ struct RoundedButton: View {
                 LogoGradient()
                 
                 HStack(alignment: .center, spacing: 10){
-                    image
+                    leadingImage
+                        .foregroundStyle(.white)
                     if let title = title {
                         Text(title)
                             .font(.system(size: 16, weight: .bold))
                             .foregroundStyle(.white)
                     }
+                    trailingImage
+                        .foregroundStyle(.white)
                 }
             }
         }
         .allowsHitTesting(action != nil)
         .cornerRadius(99)
         .frame(height: 60)
+        .shadow(color: .shadow, radius: 22, x: 0, y: 10)
     }
+}
+
+#Preview {
+    RoundedButton()
 }
