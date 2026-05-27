@@ -38,8 +38,10 @@ struct Register1View: View {
             Spacer()
             
             VStack(spacing: 20){
-                RoundedButton(title: "Register"){
-                    
+                NavigationLink{
+                    Register2View()
+                } label: {
+                    RoundedButton(title: "Register")
                 }
                 Socials()
             }
