@@ -64,7 +64,7 @@ struct Register2View: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(30)
-        .padding(.bottom, 10)
+        .padding(.bottom, 40)
         .padding(.top, 50)
         
     }
