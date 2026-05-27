@@ -12,6 +12,7 @@ struct Input: View {
     @Binding var text: String
     var placeholder: String
     var image: Image?
+    var keyboardType: UIKeyboardType? = nil
     
     var body: some View {
         ZStack{
@@ -24,6 +25,7 @@ struct Input: View {
                 TextField(placeholder, text: $text)
                     .font(.footnote)
                     .frame(maxWidth: .infinity)
+                    .keyboardType(keyboardType ?? .default)
             }
         }
         .padding(15)
