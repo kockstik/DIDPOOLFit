@@ -34,6 +34,7 @@ struct WelcomeView: View {
             .padding(.bottom, 40)
         }
         .background(BackgroundGradient.gradient)
+        .ignoresSafeArea()
     }
 }
 

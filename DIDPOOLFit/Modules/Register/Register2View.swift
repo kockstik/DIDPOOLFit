@@ -57,16 +57,19 @@ struct Register2View: View {
                 }
             }
             
-            NavigationLink(destination: Register1View()){
+            NavigationLink{
+                Register3View()
+                    .navigationBarBackButtonHidden(true)
+            } label: {
                 RoundedButton(title: "Next", trailingImage: Image(.arrowRight))
             }
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(30)
-        .padding(.bottom, 40)
+        .padding(.horizontal, 30)
+        .padding(.vertical, 40)
         .padding(.top, 50)
-        
+        .ignoresSafeArea()
     }
 }
 

@@ -53,6 +53,8 @@ struct Register1View: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 30)
         .padding(.vertical, 40)
+        .padding(.top, 50)
+        .ignoresSafeArea()
     }
 }
 
