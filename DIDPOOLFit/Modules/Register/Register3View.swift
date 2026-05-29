@@ -28,6 +28,7 @@ struct Register3View: View {
             
             RoundedButton(title: "Confirm")
         }
+        .frame(maxHeight: .infinity)
         .padding(.top, 50)
         .padding(.vertical, 40)
         .padding(.horizontal, 30)
