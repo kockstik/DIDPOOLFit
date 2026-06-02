@@ -26,13 +26,17 @@ struct Register3View: View {
             
             Spacer()
             
-            RoundedButton(title: "Confirm")
+            NavigationLink {
+                SuccessRegistrationView()
+                    .navigationBarBackButtonHidden(true)
+            } label: {
+                RoundedButton(title: "Confirm")
+            }
         }
         .frame(maxHeight: .infinity)
-        .padding(.top, 50)
-        .padding(.vertical, 40)
+        .padding(.top, 20)
+        .padding(.vertical, 20)
         .padding(.horizontal, 30)
-        .ignoresSafeArea()
     }
 }
 
