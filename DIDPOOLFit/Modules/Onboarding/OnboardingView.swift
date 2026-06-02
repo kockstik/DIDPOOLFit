@@ -23,14 +23,19 @@ struct OnboardingView: View{
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay{
+                Rectangle()
+                    .fill(Color.white.opacity(0.01))
+            }
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
         .background{
             AnimatedOnboardShape(progress: CGFloat(page), offsetY: -435)
                 .fill(.appWhite)
-                .animation(.easeInOut(duration: 0.4), value: page)
                 .background(BackgroundGradient.gradient)
+                .drawingGroup()
                 .ignoresSafeArea()
         }
         .overlay(alignment: .bottomTrailing) {
