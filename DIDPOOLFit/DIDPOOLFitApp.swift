@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct DIDPOOLFitApp: App {
+    
+    @State var needAuth: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
-                WelcomeView()
+            if needAuth{
+                NavigationStack{
+                    WelcomeView()
+                }
+            } else {
+                MainView()
             }
         }
     }
