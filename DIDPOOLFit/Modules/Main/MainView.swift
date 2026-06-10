@@ -25,7 +25,7 @@ struct MainView: View{
             }
             .toolbar(.hidden)
             
-            Navbar()
+            Navbar(selectedTab: $selectedTab)
         }
     }
 }
