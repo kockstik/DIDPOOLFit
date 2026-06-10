@@ -11,6 +11,8 @@ struct RoundedButton: View {
     var leadingImage: Image?
     var title: String?
     var trailingImage: Image?
+    var cornerRadius: CGFloat = 99
+    var backgroundColor: Color?
     var action: (() -> Void)?
     
     var body: some View {
@@ -18,7 +20,12 @@ struct RoundedButton: View {
             action?()
         } label: {
             ZStack{
-                LogoGradient()
+                if let backgroundColor = backgroundColor {
+                    Rectangle()
+                        .fill(backgroundColor)
+                } else {
+                    LogoGradient()
+                }
                 
                 HStack(alignment: .center, spacing: 10){
                     leadingImage
@@ -34,9 +41,9 @@ struct RoundedButton: View {
             }
         }
         .allowsHitTesting(action != nil)
-        .cornerRadius(99)
-        .frame(height: 60)
-        .shadow(color: .shadow, radius: 22, x: 0, y: 10)
+        .cornerRadius(cornerRadius)
+        .frame(maxHeight: 60)
+        .shadow(color: .shadow, radius: backgroundColor == nil ? 22 : 0, x: 0, y: backgroundColor == nil ? 10 : 0)
     }
 }
 
