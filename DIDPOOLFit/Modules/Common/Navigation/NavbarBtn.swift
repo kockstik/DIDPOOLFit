@@ -21,7 +21,9 @@ struct NavbarBtn: View {
     var body: some View {
         Button {
             if selectedTab != index {
-                selectedTab = index
+                withAnimation(.easeInOut(duration: 0.25)){
+                    selectedTab = index
+                }
             }
         } label: {
             VStack(spacing: 3){
