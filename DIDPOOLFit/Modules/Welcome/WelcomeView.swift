@@ -11,11 +11,11 @@ struct WelcomeView: View {
     var body: some View {
         ZStack{
             ZStack{
-                VStack {
+                VStack(spacing: 10) {
                     (Text("DIDPOOL").foregroundStyle(.white) + Text("Fit"))
                         .font(.system(size: 36, weight: .bold))
                     Text("Everybody Can Train")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.white)
                 }
                 .padding()
                 
