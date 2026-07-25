@@ -13,6 +13,7 @@ struct RoundedButton: View {
     var trailingImage: Image?
     var cornerRadius: CGFloat = 99
     var backgroundColor: Color?
+    var fontSize: CGFloat = 16
     var action: (() -> Void)?
     
     var body: some View {
@@ -32,7 +33,7 @@ struct RoundedButton: View {
                         .foregroundStyle(.white)
                     if let title = title {
                         Text(title)
-                            .font(.system(size: 16, weight: .bold))
+                            .font(.system(size: fontSize, weight: .bold))
                             .foregroundStyle(.white)
                     }
                     trailingImage
