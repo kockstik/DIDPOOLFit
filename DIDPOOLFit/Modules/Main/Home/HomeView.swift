@@ -9,9 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Rectangle()
-            .fill(.gray)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.gray)
+        VStack(spacing: 30){
+            HomeTitle()
+            BMIPlane()
+            Spacer()
+        }
+        .frame(maxHeight: .infinity)
+        .padding(.horizontal, 30)
     }
+}
+
+#Preview {
+    HomeView()
 }
