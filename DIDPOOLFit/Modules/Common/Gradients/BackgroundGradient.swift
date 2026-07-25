@@ -16,7 +16,15 @@ struct BackgroundGradient: View {
     
     static let gradient = LinearGradient(
         colors: [.purpleLinearLeft, .purpleLinearRight],
-        startPoint: UnitPoint(x: -1.3, y: 0.5),
-        endPoint: UnitPoint(x: 0.8, y: 0.7)
+        startPoint: UnitPoint(x: -0.3, y: 0.5),
+        endPoint: UnitPoint(x: 1, y: 0.5)
     )
+    
+    /*
+     static let gradient = LinearGradient(
+         colors: [.purpleLinearLeft, .purpleLinearRight],
+         startPoint: UnitPoint(x: -1.3, y: 0.5),
+         endPoint: UnitPoint(x: 0.8, y: 0.7)
+     )
+     */
 }
