@@ -12,6 +12,16 @@ struct HomeView: View {
         VStack(spacing: 30){
             HomeTitle()
             BMIPlane()
+            CheckPlane()
+            
+            VStack(alignment: .leading, spacing: 15) {
+                Text("Activity Status")
+                    .font(.body).bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                HeartRatePanel()
+            }
+            
             Spacer()
         }
         .frame(maxHeight: .infinity)
