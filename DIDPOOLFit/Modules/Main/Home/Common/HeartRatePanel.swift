@@ -73,6 +73,15 @@ struct HeartRatePanel: View{
             
             Chart {
                 ForEach(data, id: \.self) { point in
+                    AreaMark(x: .value("", point.time), y: .value("", point.rate))
+                        .foregroundStyle(BackgroundGradient.gradient)
+                        .mask{
+                            RectangleMark(x: .value("", start), y: .value("", maxValue), width: 900, height: 150)
+                                .foregroundStyle(
+                                    LinearGradient(colors: [.white, .clear], startPoint: .top, endPoint: .bottom)
+                                )
+                        }
+        
                     LineMark(x: .value("", point.time), y: .value("", point.rate))
                 }
             }
@@ -82,6 +91,7 @@ struct HeartRatePanel: View{
             .chartYAxis(.hidden)
             .chartXAxis(.hidden)
             .padding(.top, 50)
+            
         }
         .frame(maxWidth: .infinity, maxHeight: 150)
         .background{
